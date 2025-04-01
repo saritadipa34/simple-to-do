@@ -34,7 +34,6 @@ edit.addEventListener('click',()=>{
         return;
     }
     paragraph.innerText=newValue;
-    console.log("edit")
 })
 
     const deleteBtn=document.createElement('button');
@@ -44,7 +43,6 @@ edit.addEventListener('click',()=>{
 
 deleteBtn.addEventListener('click',()=>{
     task.remove();
-    console.log("delete");
 })
 
 inputBox.value = "";
