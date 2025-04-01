@@ -2,18 +2,22 @@ const inputBox=document.getElementById('inputBox');
 const container=document.getElementById('container');
 
 inputBox.addEventListener('change',(e)=>{
-    
-    console.log(e.target.value,"click")
+    let todo=e.target.value;
+    console.log(todo,"click")
 })
 
 const save=document.getElementById('save')
 save.addEventListener('click',()=>{
+    const inputBox=document.getElementById('inputBox');
+    inputBox.innerText=inputBox.value;
+
     const task=document.createElement('div');
     task.classList.add('task');
     container.appendChild(task);
-    const paragraph=document.createElement('p')
+    const paragraph=document.createElement('p');
     paragraph.classList.add('paragraph');
     task.appendChild(paragraph);
+   paragraph.innerText=inputBox.value;
 const btnBox=document.createElement('div');
 task.appendChild(btnBox);
     const edit=document.createElement('button');
@@ -25,4 +29,6 @@ task.appendChild(btnBox);
     deleteBtn.classList.add('deleteBtn');
     btnBox.appendChild(deleteBtn);
 })
+
+
 
