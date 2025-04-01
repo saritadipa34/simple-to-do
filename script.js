@@ -29,6 +29,10 @@ if(inputValue === "") return;
 
 edit.addEventListener('click',()=>{
     const newValue=prompt("Edit Todo",inputValue);
+    if(newValue === null || newValue === ""){
+        alert("invalid");
+        return;
+    }
     paragraph.innerText=newValue;
     console.log("edit")
 })
