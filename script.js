@@ -1,12 +1,9 @@
 const inputBox=document.getElementById('inputBox');
 const container=document.getElementById('container');
 
-inputBox.addEventListener('change',(e)=>{
-    let todo=e.target.value;
-    console.log(todo,"click")
-})
 
 const save=document.getElementById('save')
+
 save.addEventListener('click',()=>{
     const inputBox=document.getElementById('inputBox');
     inputBox.innerText=inputBox.value;
@@ -15,11 +12,12 @@ save.addEventListener('click',()=>{
     task.classList.add('task');
     container.appendChild(task);
 
-
     const paragraph=document.createElement('p');
     paragraph.classList.add('paragraph');
     task.appendChild(paragraph);
-   paragraph.innerText=inputBox.value;
+    let inputValue=inputBox.value.trim();
+
+   paragraph.innerText=inputValue;
 const btnBox=document.createElement('div');
 task.appendChild(btnBox);
 
@@ -28,7 +26,11 @@ task.appendChild(btnBox);
     edit.classList.add('edit');
     btnBox.appendChild(edit);
 
-
+edit.addEventListener('click',()=>{
+    const newValue=prompt("Edit Todo",inputValue);
+    paragraph.innerText=newValue;
+    console.log("edit")
+})
 
     const deleteBtn=document.createElement('button');
     deleteBtn.innerText="Delete";
