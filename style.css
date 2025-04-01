@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#box{
+    min-height: 100px;
+    background-color: aqua;
+    width: 500px;
+    padding: 10px 30px;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 10PX;
+}
+
+input{
+    width: 80%;
+    height: 30px;
+    margin-bottom: 10px;
+    padding: 0 5px;
+}
+
+#save{
+    height: 30px;
+    width: 19%;
+    cursor: pointer;
+}
+
+#container{
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+    
+}
+
+.task{
+    width: 100%;
+    height: 30px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.paragraph{
+    height: 30px;
+    background-color: rgb(206, 197, 197);
+    width: 76%;
+    padding: 5px 10px;
+}
+
+.edit, .deleteBtn{
+    height: 30px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.btnBox{
+    
+}
