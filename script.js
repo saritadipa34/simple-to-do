@@ -6,7 +6,9 @@ const save=document.getElementById('save')
 
 save.addEventListener('click',()=>{
     const inputBox=document.getElementById('inputBox');
-    inputBox.innerText=inputBox.value;
+    const inputValue=inputBox.value.trim();
+
+if(inputValue === "") return;
 
     const task=document.createElement('div');
     task.classList.add('task');
@@ -15,11 +17,10 @@ save.addEventListener('click',()=>{
     const paragraph=document.createElement('p');
     paragraph.classList.add('paragraph');
     task.appendChild(paragraph);
-    let inputValue=inputBox.value.trim();
 
    paragraph.innerText=inputValue;
-const btnBox=document.createElement('div');
-task.appendChild(btnBox);
+   const btnBox=document.createElement('div');
+   task.appendChild(btnBox);
 
     const edit=document.createElement('button');
     edit.innerText="Edit";
@@ -36,6 +37,14 @@ edit.addEventListener('click',()=>{
     deleteBtn.innerText="Delete";
     deleteBtn.classList.add('deleteBtn');
     btnBox.appendChild(deleteBtn);
+
+deleteBtn.addEventListener('click',()=>{
+    task.remove();
+    console.log("delete");
+})
+
+inputBox.value = "";
+
 })
 
 
